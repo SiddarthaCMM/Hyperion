@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: light;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #ffc300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: light;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 1.4vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 40px; /* Increases the size of the button */
+  font-size: 1.2vw; /* Make the button text larger */
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  margin-left: 10px;
+}
+
+.logo img {
+  width: 50px; /* Ajusta este valor según el tamaño que desees */
+  height: auto; /* Mantiene la proporción del logo */
+  margin-right: 10px; /* Opcional: Añade un pequeño espacio entre el logo y el texto */
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-text h2 {
+  font-size: 4vw;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 2vw;
+  margin-bottom: 20px;
+}
+
+.hero-text .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero-image {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.control-projects {
+  background-color: #FFD857;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.control-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.control-text h2 {
+  font-size: 4vw;
+  margin-bottom: 10px;
+}
+
+.control-text p {
+  font-size: 2vw;
+  margin-bottom: 10px;
+}
+
+.control-image {
+  flex: 1;
+}
+
+.control-projects img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+}
+
+.info-card {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.info-card h3 {
+  font-size: 2vw;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 1.5vw;
+  margin-bottom: 10px;
+}
+
+.info-card {
+  text-align: center;
+}
+
+.info-card img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.form-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.form-section h2 {
+  font-size: 2.4vw;
+  margin-bottom: 20px;
+}
+
+.btn-home {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 40px; /* Increases the size of the button */
+  font-size: 1.2vw; /* Make the button text larger */
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.4vw;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 1.2vw;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-section h3{
+  font-size: 2vw;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2vw;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form .form-group {
+  width: 100%;
+  max-width: 600px;
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='LOGO.png') }}" alt="Optiplanner Logo">
+                <h1>My Projects</h1>
+            </div>
+            <a href="{{ url_for('index')}}" class="btn-home">Home</a>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h2>Enter the parameters of your work team</h2>
+        <form id="projectForm">
+            <div class="form-group">
+                <label for="type">Type of Project/Construction</label>
+                <select id="type" name="type">
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="industrial">Industrial</option>
+                    <option value="institutional">Institutional</option>
+                    <option value="cultural">Cultural or Entertainment</option>
+                    <option value="religious">Religious</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="square-meters">Squared Meters</label>
+                <input type="number" id="square-meters" name="square-meters">
+            </div>
+            <div class="form-group">
+                <label for="weather">Weather (1-10)</label>
+                <input type="number" id="weather" name="weather" min="1" max="10">
+            </div>
+            <div class="form-group">
+                <label for="soil-state">Soil State</label>
+                <select id="soil-state" name="soil-state">
+                    <option value="granular">Granular</option>
+                    <option value="cohesive">Cohesive</option>
+                    <option value="organic">Organic</option>
+                    <option value="rocky">Rocky</option>
+                    <option value="mixed">Mixed</option>
+                    <option value="special">Special</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="material">Material</label>
+                <select id="material" name="material">
+                    <option value="natural">Natural</option>
+                    <option value="manufactured">Manufactured</option>
+                    <option value="composite">Composite</option>
+                    <option value="sustainable">Sustainable</option>
+                    <option value="isolated">Isolated</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="design">Design</label>
+                <select id="design" name="design">
+                    <option value="architectonic">Architectonic</option>
+                    <option value="urban">Urban</option>
+                    <option value="sustainable1">Sustainable</option>
+                    <option value="functional">Functional</option>
+                    <option value="aesthetic">Aesthetic</option>
+                    <option value="technical">Technical</option>
+                    <option value="inclusive">Inclusive</option>
+                    <option value="interiors">Interiors</option>
+                </select>
+            </div>
+    
+            <h3>Worker Details</h3>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                    <option value="builder">Builder</option>
+                    <option value="carpenter">Carpenter</option>
+                    <option value="electrician">Electrician</option>
+                    <option value="plumber">Plumber</option>
+                    <option value="painter">Painter</option>
+                    <option value="machinery_operator">Machinery Operator</option>
+                    <option value="peon">Peon</option>
+                    <option value="plasterer">Plasterer</option>
+                    <option value="demolitionist">Demolitionist</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="experience">Experience</label>
+                <input type="number" id="experience" name="experience">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age">
+            </div>
+            <button type="submit" class="btn">Save Information</button>
+        </form>
+        <div id="confirmationMessage"></div>
+        <div id="predictionResult"></div>
+    </section>
+
+    <script>
+        document.getElementById("projectForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevenir el envío tradicional del formulario
+    
+            // Mapear cada campo a un número (si es posible)
+            const typeMap = {
+                "residential": 1,
+                "commercial": 2,
+                "industrial": 3,
+                "institutional": 4,
+                "cultural": 5,
+                "religious": 6
+            };
+            const type = parseInt(typeMap[document.getElementById("type").value]) || 0;
+    
+            const squareMeters = parseFloat(document.getElementById("square-meters").value) || 0;
+            const weather = parseInt(document.getElementById("weather").value, 10) || 0;
+    
+            const soilMap = {
+                "granular": 1,
+                "cohesive": 2,
+                "organic": 3,
+                "rocky": 4,
+                "mixed": 5,
+                "special": 6
+            };
+            const soil = parseInt(soilMap[document.getElementById("soil-state").value]) || 0;
+    
+            const materialMap = {
+                "natural": 1,
+                "manufactured": 2,
+                "composite": 3,
+                "sustainable": 4,
+                "isolated": 5
+            };
+            const material = parseInt(materialMap[document.getElementById("material").value]) || 0;
+    
+            const designMap = {
+                "architectonic": 1,
+                "urban": 2,
+                "sustainable1": 3,
+                "functional": 4,
+                "aesthetic": 5,
+                "technical": 6,
+                "inclusive": 7,
+                "interiors": 8
+            };
+            const design = parseInt(designMap[document.getElementById("design").value]) || 0;
+    
+            const roleMap = {
+                "builder": 1,
+                "carpenter": 2,
+                "electrician": 3,
+                "plumber": 4,
+                "painter": 5,
+                "machinery_operator": 6,
+                "peon": 7,
+                "plasterer": 8,
+                "demolitionist": 9
+            };
+            const role = parseInt(roleMap[document.getElementById("role").value]) || 0;
+    
+            const experience = parseInt(document.getElementById("experience").value, 10) || 0;
+            const age = parseInt(document.getElementById("age").value, 10) || 0;
+    
+            // Checar si los campos requeridos están llenos
+            if (type === 0 || squareMeters === 0 || weather === 0 || soil === 0 || material === 0 || design === 0 || role === 0 || experience === 0 || age === 0) {
+                // Mostrar un mensaje de error si falta información
+                const errorMessage = document.createElement("p");
+                errorMessage.textContent = "Please fill out all required fields.";
+                errorMessage.style.color = "red"; 
+                document.getElementById("confirmationMessage").innerHTML = "";
+                document.getElementById("confirmationMessage").appendChild(errorMessage);
+            } else {
+                // Crear el objeto de datos a enviar
+                const data = {
+                    type: type,
+                    square_meters: squareMeters,
+                    weather: weather,
+                    soil_state: soil,
+                    material: material,
+                    design: design,
+                    role: role,
+                    experience: experience,
+                    age: age
+                };
+    
+                // Hacer la solicitud POST usando fetch
+                fetch('http://localhost:5000/run-script', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(response => response.json())  // Parsear la respuesta como JSON
+                .then(result => {
+                    // Verificar si result.prediction es un número válido antes de usar toFixed()
+                    if (result.prediction !== undefined && !isNaN(result.prediction)) {
+                        // Mostrar el resultado en la página
+                        document.getElementById("predictionResult").innerHTML = 
+                            `<p><strong>Predicción de duración del proyecto:</strong> ${result.prediction.toFixed(2)} meses</p>`;
+                    } else {
+                        document.getElementById("predictionResult").innerHTML = 
+                            `<p><strong>Error:</strong> No se pudo calcular la predicción.</p>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById("predictionResult").innerHTML = 
+                        `<p><strong>Error:</strong> Ocurrió un error al procesar la solicitud.</p>`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

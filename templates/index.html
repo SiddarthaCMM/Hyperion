@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optiplanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='LOGO.png') }}" alt="Optiplanner Logo">
+                <h1>Optiplanner</h1>
+            </div>
+            <a href="{{ url_for('form') }}" class="btn">Go to Projects</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-image">
+        <img src="{{ url_for('static', filename='Construction.jpg') }}" alt="Work Team">
+        </div>
+        <div class="hero-text">
+            <h2>Manage your Work Teams.</h2>
+            <p>Optimize work teams and reduce costs and risks for your construction plans.</p>
+            <a href="{{ url_for('fprueba') }}" class="btn">Register</a>
+        </div>
+
+    </section>
+
+    <section class="control-projects">
+        <div class="control-text">
+            <h2>Take Control of your Projects</h2>
+            <p>Use AI-powered to enhance the productivity and efficiency of your work team.</p>
+            <a href="{{ url_for('form') }}" class="btn">Go to Projects</a>
+        </div>
+        <div class="control-image">
+        <img src="{{ url_for('static', filename='1.jpeg') }}" alt="Project Control">
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-card">
+            <img src="{{ url_for('static', filename='2.jpeg') }}" alt="Blueprints">
+            <h3>Provide Information</h3>
+            <p>By providing data, the application will give you an optimized work schedule.</p>
+        </div>
+        <div class="info-card">
+            <img src="{{ url_for('static', filename='3.jpeg') }}" alt="Construction Workers">
+            <h3>Efficiency to the Maximum</h3>
+            <p>By having an estimated time period and optimized resources, the efficiency of the company will increase by up to 20%.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact Us</p>
+        <p>Alan Moreno Nevarez</p>
+        <p><a href="mailto:a.moreno.isw@unipolidgo.edu.mx">a.moreno.isw@unipolidgo.edu.mx</a></p>
+        <p>Tel. 618 101 7166</p>
+    </footer>
+</body>
+</html>
